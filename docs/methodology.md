@@ -1,5 +1,4 @@
 # Methodology
-
 ## 1. Data Collection
 
 Earthquake data, insurance stock data, and market index data were collected from external sources.
