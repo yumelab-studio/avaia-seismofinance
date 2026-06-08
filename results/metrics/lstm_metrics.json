@@ -1,0 +1,8 @@
+{
+    "model": "LSTM",
+    "accuracy": 0.3652694610778443,
+    "precision_macro": 0.36406694341535006,
+    "recall_macro": 0.3632833877199559,
+    "f1_macro": 0.36222640607255996,
+    "sequence_length": 10
+}
