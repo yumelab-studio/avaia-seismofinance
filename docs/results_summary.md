@@ -44,7 +44,7 @@ to look better.
 
 ## Limitations
 
-- Single ticker (8766.T) and ~3,380 daily rows — small for deep learning.
+- Single ticker (8766.T) and only ~3,380 daily rows, which is small for deep learning.
 - Next-day price direction is close to a random walk; markets price in known
   information quickly, and most price drivers are unrelated to seismic activity.
 - Sequence length was chosen by test-set macro F1 among {5, 10, 20}; with more data a
