@@ -1,9 +1,10 @@
 pandas
 numpy
 matplotlib
+seaborn
 scikit-learn
 tensorflow
 yfinance
 joblib
-seaborn
 plotly
+jupyter
