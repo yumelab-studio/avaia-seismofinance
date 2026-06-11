@@ -1,4 +1,4 @@
-<h1 align="center">SeismoFinance</h1>
+<h1 align="center">🌊 SeismoFinance</h1>
 
 <h2 align="center">Predicting Market Reactions to Major Earthquakes</h2>
 
@@ -8,34 +8,30 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-00A6D6?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TensorFlow-LSTM-00BFA6?style=for-the-badge&logo=tensorflow&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Model-BUY%20%7C%20HOLD%20%7C%20SELL-0077B6?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Python-3.x-009FE3?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Data-Seismic%20%2B%20Financial-00BFA6?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Model-LSTM%20Classifier-0077B6?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Macro%20F1-0.3622-00A6D6?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/License-MIT-0B1F33?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Signal-SELL%20%7C%20HOLD%20%7C%20BUY-00BFA6?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Stock-8766.T-0077B6?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Market-Nikkei%20225-009FE3?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Study%20Period-2011--2023-0B1F33?style=flat-square"/>
 </p>
 
 ---
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Problem Statement](#problem-statement)
-- [Project Objectives](#project-objectives)
-- [Data Sources](#data-sources)
-- [Repository Structure](#repository-structure)
-- [Methodology](#methodology)
-- [Feature Engineering](#feature-engineering)
-- [Model Architecture](#model-architecture)
-- [Results](#results)
-- [Visual Analysis](#visual-analysis)
-- [Final Demo](#final-demo)
-- [Installation](#installation)
-- [Reproducible Workflow](#reproducible-workflow)
-- [Source Code Modules](#source-code-modules)
-- [Final Poster](#final-poster)
-- [Team Contributions](#team-contributions)
-- [Limitations and Future Work](#limitations-and-future-work)
-- [Conclusion](#conclusion)
+<p align="center">
+  <a href="#project-overview">Overview</a> •
+  <a href="#methodology">Methodology</a> •
+  <a href="#model-architecture">Model</a> •
+  <a href="#results">Results</a> •
+  <a href="#visual-analysis">Visuals</a> •
+  <a href="#final-poster">Poster</a>
+</p>
 
 ---
 
@@ -48,7 +44,7 @@ The project combines seismic event data, stock market data, and market index dat
 The final model predicts the next-day abnormal return direction and converts it into a readable prototype signal:
 
 <p align="center">
-  <b>SELL</b> &nbsp; | &nbsp; <b>HOLD</b> &nbsp; | &nbsp; <b>BUY</b>
+  <b>SELL</b> &nbsp;&nbsp; | &nbsp;&nbsp; <b>HOLD</b> &nbsp;&nbsp; | &nbsp;&nbsp; <b>BUY</b>
 </p>
 
 > This project is an academic decision-support prototype and should not be interpreted as financial advice.
@@ -232,9 +228,11 @@ Financial data was cleaned by:
 
 The final dataset combines earthquake-related indicators with financial market features.
 
-### Earthquake-Based Features
+<table>
+<tr>
+<td width="50%" valign="top">
 
-The seismic feature set includes:
+### Earthquake-Based Features
 
 - earthquake count
 - maximum daily magnitude
@@ -246,9 +244,10 @@ The seismic feature set includes:
 - distance-based features for major Japanese cities
 - days since last earthquake
 
-### Financial Features
+</td>
+<td width="50%" valign="top">
 
-The financial feature set includes:
+### Financial Features
 
 - stock return
 - market return
@@ -257,6 +256,10 @@ The financial feature set includes:
 - rolling returns
 - volatility features
 - volume change
+
+</td>
+</tr>
+</table>
 
 Together, these features represent both seismic event intensity and recent financial market behavior.
 
