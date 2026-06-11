@@ -49,13 +49,13 @@
 
 ## Final Deliverables
 
-- [ ] Final poster PDF uploaded to `poster/final_poster.pdf`
-- [ ] Poster preview image uploaded to `poster/final_poster.png`
-- [ ] Final README updated
-- [ ] README includes poster preview
-- [ ] README includes results table
-- [ ] README includes important figures
-- [ ] README includes repository structure
-- [ ] README includes reproducible workflow
-- [ ] README includes team contributions
+- [x] Final poster uploaded to `poster/final_poster_AVAIA.png`
+- [x] Final README updated
+- [x] README includes poster preview
+- [x] README includes results table
+- [x] README includes important figures
+- [x] README includes repository structure
+- [x] README includes reproducible workflow
+- [x] README includes team contributions
+- [x] Final repository cleanup completed
 - [ ] Final repository cleanup completed
