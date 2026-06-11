@@ -596,7 +596,7 @@ poster/final_poster_AVAIA.png
 
 ## Team Contributions
 
-### Tyra
+### Tajra
 
 - organized the GitHub repository structure
 - coordinated the final project workflow
