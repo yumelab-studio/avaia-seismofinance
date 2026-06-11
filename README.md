@@ -1,27 +1,55 @@
-# SeismoFinance: Predicting Market Reactions to Major Earthquakes
+<h1 align="center">SeismoFinance</h1>
 
-<p align="center">
-  <img src="poster/final_poster_AVAIA.png" alt="SeismoFinance Final Poster" width="900"/>
-</p>
+<h2 align="center">Predicting Market Reactions to Major Earthquakes</h2>
 
 <p align="center">
   <b>Financial Time-Series Forecasting with Earthquake-Derived Features</b><br>
   Practical Application of AI Course Project
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-00A6D6?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TensorFlow-LSTM-00BFA6?style=for-the-badge&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Model-BUY%20%7C%20HOLD%20%7C%20SELL-0077B6?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-0B1F33?style=for-the-badge"/>
+</p>
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Problem Statement](#problem-statement)
+- [Project Objectives](#project-objectives)
+- [Data Sources](#data-sources)
+- [Repository Structure](#repository-structure)
+- [Methodology](#methodology)
+- [Feature Engineering](#feature-engineering)
+- [Model Architecture](#model-architecture)
+- [Results](#results)
+- [Visual Analysis](#visual-analysis)
+- [Final Demo](#final-demo)
+- [Installation](#installation)
+- [Reproducible Workflow](#reproducible-workflow)
+- [Source Code Modules](#source-code-modules)
+- [Final Poster](#final-poster)
+- [Team Contributions](#team-contributions)
+- [Limitations and Future Work](#limitations-and-future-work)
+- [Conclusion](#conclusion)
+
 ---
 
 ## Project Overview
 
-**SeismoFinance** investigates whether earthquake-related events in Japan can help predict short-term reactions in Japanese insurance stock prices.
+**SeismoFinance** is a machine learning project that investigates whether earthquake-related events in Japan can help predict short-term reactions in Japanese insurance stock prices.
 
-The project combines seismic event data, stock market data, and market index data to build a complete machine learning pipeline for predicting the next-day abnormal return direction of **Tokio Marine Holdings (`8766.T`)**, a major Japanese insurance company.
+The project combines seismic event data, stock market data, and market index data to build a complete prediction pipeline for **Tokio Marine Holdings (`8766.T`)**, a major Japanese insurance company.
 
-The final system converts model probabilities into a readable prototype signal:
+The final model predicts the next-day abnormal return direction and converts it into a readable prototype signal:
 
-```text
-SELL / HOLD / BUY
-```
+<p align="center">
+  <b>SELL</b> &nbsp; | &nbsp; <b>HOLD</b> &nbsp; | &nbsp; <b>BUY</b>
+</p>
 
 > This project is an academic decision-support prototype and should not be interpreted as financial advice.
 
@@ -29,9 +57,9 @@ SELL / HOLD / BUY
 
 ## Problem Statement
 
-Earthquakes are sudden external shocks that can create uncertainty in financial markets. For insurance companies, major seismic events may influence investor expectations through expected claims, perceived disaster exposure, and broader market risk.
+Earthquakes are sudden external shocks that may influence financial markets through uncertainty, expected insurance claims, investor risk perception, and broader market volatility.
 
-Japan is a strong case study because it is highly exposed to earthquake activity and has a developed financial market with publicly traded insurance companies.
+Japan is a strong case study because it is highly exposed to seismic activity and has a developed stock market with publicly traded insurance companies.
 
 This project asks:
 
@@ -50,18 +78,18 @@ The prediction task is formulated as a three-class classification problem:
 
 ---
 
-## Objectives
+## Project Objectives
 
 The main objectives of this project were to:
 
 - collect earthquake, stock, and market index data
-- clean and align all datasets by Japanese trading dates
+- clean and align datasets by Japanese trading dates
 - engineer seismic and financial time-series features
 - create Buy/Hold/Sell labels from next-day abnormal return
 - train and compare baseline machine learning models
 - train and evaluate an LSTM time-series model
-- convert model output into a readable decision-support signal
-- document the full workflow through code, notebooks, results, and a final poster
+- convert model probabilities into a readable decision-support signal
+- document the full workflow through notebooks, source code, results, and a final poster
 
 ---
 
@@ -148,7 +176,7 @@ avaia-seismofinance/
 
 ## Methodology
 
-The project follows a complete end-to-end machine learning workflow:
+The project follows a full end-to-end machine learning workflow:
 
 ```text
 Data collection
@@ -161,7 +189,7 @@ Data collection
 -> Buy/Hold/Sell signal conversion
 ```
 
-The workflow is designed to prevent data leakage by sorting observations chronologically and using time-based train/test splitting.
+The workflow was designed to avoid data leakage by sorting observations chronologically and using a time-based train/test split.
 
 Full methodology:
 
@@ -171,7 +199,7 @@ Full methodology:
 
 ## Data Cleaning
 
-The datasets came from different sources and required separate cleaning steps before they could be merged.
+The datasets came from different sources and required separate cleaning before they could be merged.
 
 ### Earthquake Data
 
@@ -256,7 +284,7 @@ This makes the final output easier to understand as a decision-support signal.
 
 ---
 
-## Models
+## Model Architecture
 
 The project compares traditional machine learning models with a deep learning time-series model.
 
@@ -264,14 +292,14 @@ The project compares traditional machine learning models with a deep learning ti
 
 The following baseline models were trained:
 
-- Majority Class Baseline
-- Logistic Regression
-- Support Vector Machine with RBF kernel
-- K-Nearest Neighbors
-- Random Forest
-- Gradient Boosting
-
-These models were used to establish a fair benchmark before evaluating the final LSTM model.
+| Model Type | Purpose |
+|---|---|
+| Majority Class Baseline | Establishes a minimum benchmark |
+| Logistic Regression | Linear classification baseline |
+| Support Vector Machine with RBF kernel | Nonlinear classification baseline |
+| K-Nearest Neighbors | Distance-based classification baseline |
+| Random Forest | Tree-based ensemble baseline |
+| Gradient Boosting | Boosted ensemble baseline |
 
 ### Final LSTM Model
 
@@ -312,33 +340,19 @@ Model architecture documentation:
 
 ---
 
-## Evaluation Metrics
-
-The models were evaluated using:
-
-- Accuracy
-- Macro Precision
-- Macro Recall
-- Macro F1-score
-- Confusion Matrix
-
-**Macro F1-score** was used as the main metric because the task has three classes and each class should contribute equally to the evaluation.
-
----
-
 ## Results
 
 The LSTM achieved the best macro F1-score among all tested models.
 
-| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 |
-|---|---:|---:|---:|---:|
-| LSTM | 0.3653 | 0.3641 | 0.3653 | 0.3622 |
-| Gradient Boosting | 0.3560 | 0.3572 | 0.3516 | 0.3408 |
-| Random Forest | 0.3383 | 0.3316 | 0.3347 | 0.3314 |
-| KNN | 0.3279 | 0.3244 | 0.3258 | 0.3200 |
-| SVM (RBF) | 0.3117 | 0.3094 | 0.3099 | 0.3095 |
-| Logistic Regression | 0.3028 | 0.2959 | 0.3007 | 0.2942 |
-| Majority Baseline | 0.3353 | 0.1118 | 0.3333 | 0.1674 |
+| Rank | Model | Accuracy | Macro Precision | Macro Recall | Macro F1 |
+|---:|---|---:|---:|---:|---:|
+| 1 | LSTM | 0.3653 | 0.3641 | 0.3653 | 0.3622 |
+| 2 | Gradient Boosting | 0.3560 | 0.3572 | 0.3516 | 0.3408 |
+| 3 | Random Forest | 0.3383 | 0.3316 | 0.3347 | 0.3314 |
+| 4 | KNN | 0.3279 | 0.3244 | 0.3258 | 0.3200 |
+| 5 | SVM (RBF) | 0.3117 | 0.3094 | 0.3099 | 0.3095 |
+| 6 | Logistic Regression | 0.3028 | 0.2959 | 0.3007 | 0.2942 |
+| 7 | Majority Baseline | 0.3353 | 0.1118 | 0.3333 | 0.1674 |
 
 ### Key Finding
 
@@ -352,37 +366,113 @@ Full results summary:
 
 ---
 
-## Visual Results
+## Visual Analysis
 
 ### Model Comparison
 
-![Model Comparison](results/figures/model_comparison.png)
+<p align="center">
+  <img src="results/figures/model_comparison.png" alt="Model Comparison by Macro F1-score" width="850"/>
+</p>
 
-The LSTM achieved the strongest macro F1-score compared to all tested models.
+<p align="center">
+  <i>The LSTM achieved the strongest macro F1-score compared to all tested models.</i>
+</p>
+
+---
 
 ### LSTM Confusion Matrix
 
-![Confusion Matrix](results/figures/confusion_matrix.png)
+<p align="center">
+  <img src="results/figures/confusion_matrix.png" alt="LSTM Confusion Matrix" width="650"/>
+</p>
 
-The confusion matrix shows that BUY was the easiest class to identify, while SELL and HOLD were harder to separate.
+<p align="center">
+  <i>The confusion matrix shows that BUY was the easiest class to identify, while SELL and HOLD were harder to separate.</i>
+</p>
+
+---
 
 ### Training and Validation Loss
 
-![Training and Validation Loss](results/figures/train_val_loss.png)
+<p align="center">
+  <img src="results/figures/train_val_loss.png" alt="Training and Validation Loss" width="750"/>
+</p>
 
-The loss curve was used to monitor training behavior and validation performance.
+<p align="center">
+  <i>The loss curve was used to monitor LSTM training behavior and validation performance.</i>
+</p>
 
-### Label Distribution
+---
 
-![Label Distribution](results/figures/label_distribution.png)
+### Target Label Distribution
 
-The target classes were reasonably balanced across SELL, HOLD, and BUY.
+<p align="center">
+  <img src="results/figures/label_distribution.png" alt="Label Distribution" width="800"/>
+</p>
 
-### Magnitude vs Stock Return
+<p align="center">
+  <i>The target classes were reasonably balanced across SELL, HOLD, and BUY.</i>
+</p>
 
-![Magnitude vs Return](results/figures/magnitude_vs_return.png)
+---
 
-Earthquake magnitude alone showed only a weak direct relationship with stock returns, supporting the use of richer engineered features.
+### Earthquake Magnitude vs Stock Return
+
+<p align="center">
+  <img src="results/figures/magnitude_vs_return.png" alt="Magnitude vs Stock Return" width="850"/>
+</p>
+
+<p align="center">
+  <i>Earthquake magnitude alone showed only a weak direct relationship with stock returns, supporting the use of richer engineered features.</i>
+</p>
+
+---
+
+### Stock Price Timeline
+
+<p align="center">
+  <img src="results/figures/stock_price_timeline.png" alt="Stock Price Timeline" width="850"/>
+</p>
+
+<p align="center">
+  <i>The stock price timeline provides context for long-term movement in Tokio Marine Holdings during the study period.</i>
+</p>
+
+---
+
+### Stock Return Distribution
+
+<p align="center">
+  <img src="results/figures/stock_return_distribution.png" alt="Stock Return Distribution" width="850"/>
+</p>
+
+<p align="center">
+  <i>The return distribution shows that daily returns and abnormal returns are centered close to zero, which makes next-day direction prediction challenging.</i>
+</p>
+
+---
+
+### Earthquake Activity Timeline
+
+<p align="center">
+  <img src="results/figures/earthquake_timeline.png" alt="Earthquake Activity Timeline" width="850"/>
+</p>
+
+<p align="center">
+  <i>The earthquake activity timeline summarizes seismic frequency and magnitude patterns over the project period.</i>
+</p>
+
+---
+
+### Feature Correlation Heatmap
+
+<p align="center">
+  <img src="results/figures/correlation_heatmap.png" alt="Feature Correlation Heatmap" width="850"/>
+</p>
+
+<p align="center">
+  <i>The correlation heatmap highlights relationships among engineered earthquake and financial features.</i>
+</p>
 
 ---
 
@@ -454,8 +544,6 @@ notebooks/archive/
 
 ## Main Dependencies
 
-The project uses:
-
 | Library | Purpose |
 |---|---|
 | pandas | Data cleaning and manipulation |
@@ -487,15 +575,19 @@ Reusable project logic is stored in `src/`.
 
 ## Final Poster
 
-The final project poster is available in:
+The final poster summarizes the full project pipeline: problem definition, objective, data sources, feature engineering, exploratory analysis, model architecture, training details, evaluation results, demo output, conclusion, and future work.
+
+It provides a compact visual overview of the project’s main contribution: combining earthquake-derived features with financial time-series indicators to create a prototype Buy/Hold/Sell decision-support signal for Japanese insurance stock reactions.
+
+<p align="center">
+  <img src="poster/final_poster_AVAIA.png" alt="SeismoFinance Final Poster" width="950"/>
+</p>
+
+The poster file is stored at:
 
 ```text
 poster/final_poster_AVAIA.png
 ```
-
-The poster summarizes the full project pipeline, including the problem definition, data sources, feature engineering process, model architecture, training setup, evaluation results, demo output, conclusion, and future work.
-
-It provides a visual overview of the project’s main contribution: combining earthquake-derived features with financial time-series indicators to create a prototype Buy/Hold/Sell decision-support signal for Japanese insurance stock reactions.
 
 ---
 
@@ -549,7 +641,9 @@ Full contribution details:
 
 ---
 
-## Limitations
+## Limitations and Future Work
+
+### Limitations
 
 The project has several limitations:
 
@@ -559,11 +653,7 @@ The project has several limitations:
 - news sentiment and macroeconomic indicators were not included
 - next-day stock movement is naturally noisy and difficult to predict
 
-These limitations explain why the final performance is modest even though the LSTM outperformed the baselines.
-
----
-
-## Future Work
+### Future Work
 
 Future improvements could include:
 
